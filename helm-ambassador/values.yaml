@@ -1,5 +1,5 @@
 ambassador:
-  replicaCount: 2
+  replicaCount: 3
   service:
     type: NodePort
     ports:
@@ -20,6 +20,10 @@ ambassador:
      memory: 128Mi
 
   enableAES: true
+  licenseKey:
+    value:
+    createSecret: true
+    secretName:
 
   redis:
     create: false
