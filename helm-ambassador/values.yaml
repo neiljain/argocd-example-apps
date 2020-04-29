@@ -1,25 +1,25 @@
-replicaCount: 2
-service:
-  type: LoadBalancer
-adminService:
-  type: NodePort
-  nodePort: 38877
-resources:
-  limits:
-   cpu: 100m
-   memory: 128Mi
-  requests:
-   cpu: 100m
-   memory: 128Mi
+ambassador:
+  replicaCount: 2
+  service:
+    type: LoadBalancer
+  adminService:
+    type: NodePort
+    nodePort: 38877
+  resources:
+    limits:
+     cpu: 100m
+     memory: 128Mi
+    requests:
+     cpu: 100m
+     memory: 128Mi
 
-enableAES: true
+  enableAES: true
 
-redis:
-  create: false
+  redis:
+    create: false
 
-authService:
-  create: false
+  authService:
+    create: false
 
-rateLimit:
-  create: false
-
+  rateLimit:
+    create: false
