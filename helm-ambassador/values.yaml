@@ -1,7 +1,13 @@
 ambassador:
   replicaCount: 2
   service:
-    type: LoadBalancer
+    type: NodePort
+    ports:
+      - name: https
+        port: 443
+        targetPort: 8443
+        protocol: TCP
+        nodePort: 30443
   adminService:
     type: NodePort
     nodePort: 38877
