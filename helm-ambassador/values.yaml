@@ -10,7 +10,7 @@ ambassador:
         nodePort: 30443
   adminService:
     type: NodePort
-    nodePort: 38877
+    nodePort: 32677
   resources:
     limits:
      cpu: 100m
