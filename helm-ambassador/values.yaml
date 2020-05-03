@@ -1,5 +1,5 @@
 ambassador:
-  replicaCount: 3
+  replicaCount: 1
   service:
     type: NodePort
     ports:
@@ -8,9 +8,6 @@ ambassador:
         targetPort: 8443
         protocol: TCP
         nodePort: 30443
-  adminService:
-    type: NodePort
-    nodePort: 32677
 
   enableAES: true
   licenseKey:
@@ -22,7 +19,7 @@ ambassador:
     create: false
 
   authService:
-    create: false
+    create: true
 
   rateLimit:
     create: false
