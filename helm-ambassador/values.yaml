@@ -13,9 +13,13 @@ ambassador:
   - name: load-plugins
     image: account-dc-plugin:latest
     imagePullPolicy: "IfNotPresent"
+    command:
+    - cp
+    - /etc/ambassador-plugins/account-dc-plugin.so
+    - /etc/ambassador-plugins-target/
     volumeMounts:
     - name: plugins
-      mountPath: "/etc/ambassador-plugins"
+      mountPath: /etc/ambassador-plugins-target
   volumes:
   - name: plugins
     emptyDir: {}
