@@ -12,6 +12,7 @@ ambassador:
   initContainers:
   - name: load-plugins
     image: account-dc-plugin:latest
+    imagePullPolicy: "IfNotPresent"
     volumeMounts:
     - name: plugins
       mountPath: "/etc/ambassador-plugins"
