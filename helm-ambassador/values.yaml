@@ -9,6 +9,19 @@ ambassador:
         protocol: TCP
         nodePort: 30443
 
+  initContainers:
+  - name: load-plugins
+    image: account-dc-plugin:latest
+    volumeMounts:
+    - name: plugins
+      mountPath: "/etc/ambassador-plugins"
+  volumes:
+  - name: plugins
+    emptyDir: {}
+  volumeMounts:
+  - name: plugins
+    mountPath: /etc/ambassador-plugins
+
   enableAES: true
   licenseKey:
     value:
